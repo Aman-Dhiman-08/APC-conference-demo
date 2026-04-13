@@ -2,10 +2,11 @@
 <html>
 <head>
   <script>
-    var path = window.location.pathname;
+    var base = '/APC-conference-demo';
+    var path = window.location.pathname.replace(base, '') || '/';
     var search = window.location.search;
     var hash = window.location.hash;
-    var redirect = window.location.origin + '/?p=' + encodeURIComponent(path + search) + hash;
+    var redirect = window.location.origin + base + '/?p=' + encodeURIComponent(path + search) + hash;
     window.location.replace(redirect);
   </script>
 </head>
