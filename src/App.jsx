@@ -4,7 +4,7 @@ import DemoPageV2 from './components/DemoPageV2'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<DemoPage />} />
         <Route path="/v2" element={<DemoPageV2 />} />
