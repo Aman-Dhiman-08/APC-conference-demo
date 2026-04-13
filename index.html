@@ -5,7 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>apc-conference-demo</title>
-    <script type="module" crossorigin src="./assets/index-COLEa1Fs.js"></script>
+    <script>
+      (function() {
+        var p = window.location.search.match(/[?&]p=([^&]+)/);
+        if (p) {
+          var path = decodeURIComponent(p[1]);
+          window.history.replaceState(null, null, path);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-BXfMJ44-.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DEFXlhBi.css">
   </head>
   <body>
