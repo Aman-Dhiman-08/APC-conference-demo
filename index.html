@@ -5,16 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>apc-conference-demo</title>
-    <script>
-      (function() {
-        var p = window.location.search.match(/[?&]p=([^&]+)/);
-        if (p) {
-          var path = decodeURIComponent(p[1]);
-          window.history.replaceState(null, null, '/APC-conference-demo' + path);
-        }
-      })();
-    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
