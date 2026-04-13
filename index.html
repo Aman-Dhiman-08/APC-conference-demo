@@ -10,7 +10,7 @@
         var p = window.location.search.match(/[?&]p=([^&]+)/);
         if (p) {
           var path = decodeURIComponent(p[1]);
-          window.history.replaceState(null, null, path);
+          window.history.replaceState(null, null, '/APC-conference-demo' + path);
         }
       })();
     </script>
