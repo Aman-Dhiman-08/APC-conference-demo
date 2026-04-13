@@ -1,0 +1,3 @@
+customer1@example.com
+customer2@example.com
+customer3@example.com
