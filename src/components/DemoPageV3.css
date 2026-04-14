@@ -1,0 +1,69 @@
+/* V3-specific overrides on top of DemoPage.css */
+
+.v3 .logo-img {
+  height: 52px;
+}
+
+.v3 .subtitle {
+  margin-top: -12px;
+  margin-bottom: 0;
+}
+
+/* Colored pills */
+.v3 .pill:nth-child(1) {
+  background: #EEF6FF;
+  border-color: #BFDBFE;
+  color: #1D4ED8;
+}
+.v3 .pill:nth-child(2) {
+  background: #FFF7ED;
+  border-color: #FED7AA;
+  color: #C2410C;
+}
+.v3 .pill:nth-child(3) {
+  background: #F0FDF4;
+  border-color: #BBF7D0;
+  color: #15803D;
+}
+.v3 .pill:nth-child(4) {
+  background: #FDF4FF;
+  border-color: #E9D5FF;
+  color: #7E22CE;
+}
+
+/* Benefit cards — title only, bigger icon */
+.v3 .benefit-card {
+  gap: 12px;
+  padding: 20px 18px;
+}
+
+.v3 .icon-wrapper {
+  color: var(--primary);
+}
+
+.v3 .benefit-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Testimonial attribution */
+.testimonial-person {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 12px;
+}
+
+.testimonial-org {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.testimonial-product {
+  font-size: 12px;
+  color: var(--primary);
+  margin-top: 2px;
+  font-weight: 500;
+}
