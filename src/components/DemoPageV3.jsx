@@ -7,7 +7,8 @@ import {
   Building2,
   Mail,
   Phone,
-  HardHat
+  HardHat,
+  CalendarDays
 } from 'lucide-react';
 import wyreLogoSrc from '../assets/wyre-ai-logo.svg';
 import './DemoPage.css';
@@ -169,7 +170,7 @@ const DemoPageV3 = () => {
           <div className="form-card">
             <div className="form-header">
               <div className="header-icon">
-                <Mail size={24} />
+                <CalendarDays size={24} />
               </div>
               <div className="header-text">
                 <p>Wyre AI</p>

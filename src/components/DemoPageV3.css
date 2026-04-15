@@ -4,9 +4,36 @@
   height: 52px;
 }
 
+/* Tighter overall section spacing */
+.v3 .left-content {
+  gap: 22px;
+}
+
+.v3 .demo-container {
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 .v3 .subtitle {
-  margin-top: -12px;
-  margin-bottom: 0;
+  margin-top: -4px;
+  margin-bottom: -4px;
+}
+
+.v3 .pills-container {
+  margin-top: 0;
+}
+
+.v3 .benefits-grid {
+  margin-top: 0;
+}
+
+.v3 .built-by-builders {
+  margin-top: 0;
+}
+
+.v3 .testimonial-section {
+  margin-top: 0;
 }
 
 /* All pills use same orange style */
@@ -18,8 +45,8 @@
 
 /* Benefit cards */
 .v3 .benefit-card {
-  gap: 10px;
-  padding: 20px 18px;
+  gap: 8px;
+  padding: 16px 14px;
 }
 
 .v3 .icon-wrapper {
@@ -38,14 +65,12 @@
   line-height: 1.45;
 }
 
-/* Dynamic testimonial fade */
-.testimonial-fade {
-  animation: tfade 0.4s ease;
-}
-
-@keyframes tfade {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* Form header Wyre AI label */
+.v3 .header-text p {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.3px;
 }
 
 /* Testimonial attribution */
@@ -53,7 +78,7 @@
   font-size: 13px;
   font-weight: 700;
   color: var(--text-main);
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .testimonial-org {
@@ -67,4 +92,14 @@
   color: var(--primary);
   margin-top: 2px;
   font-weight: 500;
+}
+
+/* Dynamic testimonial fade */
+.testimonial-fade {
+  animation: tfade 0.4s ease;
+}
+
+@keyframes tfade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
