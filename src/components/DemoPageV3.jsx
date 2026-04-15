@@ -30,44 +30,33 @@ const testimonials = [
 
 const Testimonials = () => {
   const [current, setCurrent] = React.useState(0);
-  const [contentHeight, setContentHeight] = React.useState(null);
-  const slideRefs = React.useRef([]);
-
-  React.useLayoutEffect(() => {
-    const heights = slideRefs.current.map(el => el?.offsetHeight ?? 0);
-    setContentHeight(Math.max(...heights));
-  }, []);
+  const [key, setKey] = React.useState(0);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrent(prev => (prev + 1) % testimonials.length);
+      setKey(prev => prev + 1);
     }, 6000);
     return () => clearInterval(timer);
   }, []);
 
+  const t = testimonials[current];
+
   return (
     <div className="testimonial-section">
       <p className="testimonial-label">CUSTOMER VOICE</p>
-      <div className="testimonial-content" style={contentHeight ? { height: contentHeight } : {}}>
-        {testimonials.map((t, i) => (
-          <div
-            key={i}
-            ref={el => slideRefs.current[i] = el}
-            className={`testimonial-slide ${i === current ? 'visible' : ''}`}
-          >
-            <p className="testimonial-quote">"{t.quote}"</p>
-            <p className="testimonial-person">— {t.person}</p>
-            <p className="testimonial-org">{t.company}</p>
-            <p className="testimonial-product">{t.product}</p>
-          </div>
-        ))}
+      <div key={key} className="testimonial-fade">
+        <p className="testimonial-quote">"{t.quote}"</p>
+        <p className="testimonial-person">— {t.person}</p>
+        <p className="testimonial-org">{t.company}</p>
+        <p className="testimonial-product">{t.product}</p>
       </div>
       <div className="testimonial-dots">
         {testimonials.map((_, i) => (
           <button
             key={i}
             className={`testimonial-dot ${i === current ? 'active' : ''}`}
-            onClick={() => setCurrent(i)}
+            onClick={() => { setCurrent(i); setKey(prev => prev + 1); }}
           />
         ))}
       </div>
@@ -140,6 +129,7 @@ const DemoPageV3 = () => {
                 <ShieldCheck size={26} />
               </div>
               <h3>Reduce risk before construction begins</h3>
+              <p>Detect scope gaps, conflicts, and inconsistencies in your construction documents.</p>
             </div>
 
             <div className="benefit-card">
@@ -147,6 +137,7 @@ const DemoPageV3 = () => {
                 <Clock size={26} />
               </div>
               <h3>Build scopes and bid items faster</h3>
+              <p>Wyre AI analyzes your full document set accelerating scope review and bid preparation.</p>
             </div>
 
             <div className="benefit-card">
@@ -154,6 +145,7 @@ const DemoPageV3 = () => {
                 <Sparkles size={26} />
               </div>
               <h3>Improve bid confidence</h3>
+              <p>Deliver complete, traceable scopes backed by source references.</p>
             </div>
           </div>
 
@@ -164,7 +156,7 @@ const DemoPageV3 = () => {
             </div>
             <div>
               <h3 className="builders-title">Built by Builders</h3>
-              <p className="builders-desc">Founded by ex-co-founder of Pype, Sunil Dorairajan, Wyre AI is built based on real field experience — managing real projects, real deadlines, and real risk. Wyre AI is built for how preconstruction actually works.</p>
+              <p className="builders-desc">Founded by <strong>ex-co-founder of Pype, Sunil Dorairajan</strong>, Wyre AI is built based on real field experience — managing real projects, real deadlines, and real risk.</p>
             </div>
           </div>
 
