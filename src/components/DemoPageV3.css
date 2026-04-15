@@ -1,105 +1,272 @@
-/* V3-specific overrides on top of DemoPage.css */
-
-.v3 .logo-img {
-  height: 52px;
+/* ── V3 Page ─────────────────────────────────────────── */
+.v3-page {
+  min-height: 100vh;
+  background: white;
+  padding: 40px 56px;
 }
 
-/* Tighter overall section spacing */
-.v3 .left-content {
-  gap: 22px;
+.v3-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
 }
 
-.v3 .demo-container {
-  align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
+/* ── Left column ─────────────────────────────────────── */
+.v3-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.v3 .subtitle {
-  margin-top: -4px;
-  margin-bottom: -4px;
+.v3-logo {
+  height: 48px;
+  width: auto;
 }
 
-.v3 .pills-container {
-  margin-top: 0;
+/* Title */
+.v3-left .title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: #0B132B;
+  margin: 0;
 }
 
-.v3 .benefits-grid {
-  margin-top: 0;
+/* Subtitle sits tight under title */
+.v3-left .subtitle {
+  font-size: 17px;
+  color: #5E677E;
+  margin: -8px 0 0;
 }
 
-.v3 .built-by-builders {
-  margin-top: 0;
-}
-
-.v3 .testimonial-section {
-  margin-top: 0;
-}
-
-/* All pills use same orange style */
-.v3 .pill {
-  background: #FFF7ED;
-  border-color: #FED7AA;
-  color: #C2410C;
-}
-
-/* Benefit cards */
-.v3 .benefit-card {
+/* Pills — all orange */
+.v3-left .pills-container {
+  display: flex;
+  flex-wrap: nowrap;
   gap: 8px;
+  margin-top: -4px;
+}
+
+.v3-left .pill {
+  flex: 1;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  color: #C2410C;
+  white-space: nowrap;
+}
+
+/* 3 feature cards */
+.v3-left .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.v3-left .benefit-card {
   padding: 16px 14px;
+  border-radius: 12px;
+  border: 1px solid #E6E9F0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #ffffff;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
-.v3 .icon-wrapper {
-  color: var(--primary);
+.v3-left .benefit-card:hover {
+  transform: translateY(-3px);
+  border-color: #FF701F;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
 }
 
-.v3 .benefit-card h3 {
-  font-size: 14px;
+.v3-left .icon-wrapper {
+  color: #FF701F;
+}
+
+.v3-left .benefit-card h3 {
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
+  color: #0B132B;
 }
 
-.v3 .benefit-card p {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.45;
-}
-
-/* Form header Wyre AI label */
-.v3 .header-text p {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 0.3px;
-}
-
-/* Testimonial attribution */
-.testimonial-person {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-top: 10px;
-}
-
-.testimonial-org {
+.v3-left .benefit-card p {
   font-size: 12px;
-  color: var(--text-muted);
+  color: #5E677E;
+  line-height: 1.5;
+}
+
+/* Built by Builders */
+.v3-left .built-by-builders {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #f8f9fb;
+  border: 1px solid #E6E9F0;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.v3-left .builders-icon-wrap {
+  color: #FF701F;
+  flex-shrink: 0;
   margin-top: 2px;
 }
 
-.testimonial-product {
-  font-size: 12px;
-  color: var(--primary);
-  margin-top: 2px;
-  font-weight: 500;
+.v3-left .builders-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0B132B;
+  margin-bottom: 4px;
 }
 
-/* Dynamic testimonial fade */
+.v3-left .builders-desc {
+  font-size: 13px;
+  color: #5E677E;
+  line-height: 1.55;
+}
+
+/* Testimonials */
+.v3-left .testimonial-section {
+  background: white;
+  border: 1px solid #E6E9F0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.testimonial-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #808A9E;
+  margin-bottom: 10px;
+}
+
 .testimonial-fade {
   animation: tfade 0.4s ease;
 }
 
 @keyframes tfade {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(5px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-quote {
+  font-size: 13.5px;
+  color: #0B132B;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.testimonial-person {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0B132B;
+  margin-top: 10px;
+}
+
+.testimonial-org {
+  font-size: 12px;
+  color: #5E677E;
+  margin-top: 2px;
+}
+
+.testimonial-product {
+  font-size: 12px;
+  color: #FF701F;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.testimonial-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.testimonial-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background: #E6E9F0;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.testimonial-dot.active {
+  background: #FF701F;
+}
+
+/* ── Right column — form sticky center ───────────────── */
+.v3-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 140px;
+}
+
+.v3-right .form-card {
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 10px 40px -5px rgba(0,0,0,0.08), 0 4px 12px -2px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.v3-right .form-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.v3-right .header-icon {
+  background: #eff1f5;
+  padding: 12px;
+  border-radius: 12px;
+  color: #101828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v3-right .header-text p {
+  font-size: 13px;
+  font-weight: 700;
+  color: #FF701F;
+  margin-bottom: 2px;
+}
+
+.v3-right .header-text h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0B132B;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .v3-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .v3-page {
+    padding: 32px 5%;
+    align-items: flex-start;
+  }
 }

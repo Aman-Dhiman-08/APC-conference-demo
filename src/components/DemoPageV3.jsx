@@ -104,18 +104,17 @@ const DemoPageV3 = () => {
   };
 
   return (
-    <div className="v3">
-      <div className="demo-container">
-        {/* Left Section */}
-        <div className="left-content">
+    <div className="v3-page">
+      <div className="v3-layout">
+
+        {/* LEFT COLUMN */}
+        <div className="v3-left">
           <a href="https://www.wyreai.io" target="_blank" rel="noopener noreferrer" className="logo-link">
-            <img src={wyreLogoSrc} alt="Wyre AI" className="logo-img" />
+            <img src={wyreLogoSrc} alt="Wyre AI" className="logo-img v3-logo" />
           </a>
 
           <h1 className="title">See Wyre AI in Action</h1>
-          <p className="subtitle">
-            Share your details and we'll connect with you.
-          </p>
+          <p className="subtitle">Share your details and we'll connect with you.</p>
 
           <div className="pills-container">
             <span className="pill">Catch scope gaps</span>
@@ -126,47 +125,35 @@ const DemoPageV3 = () => {
 
           <div className="benefits-grid">
             <div className="benefit-card">
-              <div className="icon-wrapper">
-                <ShieldCheck size={26} />
-              </div>
+              <div className="icon-wrapper"><ShieldCheck size={26} /></div>
               <h3>Reduce risk before construction begins</h3>
               <p>Detect scope gaps, conflicts, and inconsistencies in your construction documents.</p>
             </div>
-
             <div className="benefit-card">
-              <div className="icon-wrapper">
-                <Clock size={26} />
-              </div>
+              <div className="icon-wrapper"><Clock size={26} /></div>
               <h3>Build scopes and bid items faster</h3>
               <p>Wyre AI analyzes your full document set accelerating scope review and bid preparation.</p>
             </div>
-
             <div className="benefit-card">
-              <div className="icon-wrapper">
-                <Sparkles size={26} />
-              </div>
+              <div className="icon-wrapper"><Sparkles size={26} /></div>
               <h3>Improve bid confidence</h3>
               <p>Deliver complete, traceable scopes backed by source references.</p>
             </div>
           </div>
 
-          {/* Built by Builders */}
           <div className="built-by-builders">
-            <div className="builders-icon-wrap">
-              <HardHat size={20} />
-            </div>
+            <div className="builders-icon-wrap"><HardHat size={20} /></div>
             <div>
               <h3 className="builders-title">Built by Builders</h3>
               <p className="builders-desc">Founded by <strong>ex-co-founder of Pype, Sunil Dorairajan</strong>, Wyre AI is built based on real field experience — managing real projects, real deadlines, and real risk.</p>
             </div>
           </div>
 
-          {/* Testimonials */}
           <Testimonials />
         </div>
 
-        {/* Right Section */}
-        <div className="right-section">
+        {/* RIGHT COLUMN — form centered */}
+        <div className="v3-right">
           <div className="form-card">
             <div className="form-header">
               <div className="header-icon">
@@ -184,14 +171,7 @@ const DemoPageV3 = () => {
                   <label>Name</label>
                   <div className="input-wrapper">
                     <User className="input-icon" />
-                    <input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      type="text"
-                      placeholder="Your full name"
-                      required
-                    />
+                    <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Your full name" required />
                   </div>
                 </div>
 
@@ -199,14 +179,7 @@ const DemoPageV3 = () => {
                   <label>Email</label>
                   <div className="input-wrapper">
                     <Mail className="input-icon" />
-                    <input
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      type="email"
-                      placeholder="name@company.com"
-                      required
-                    />
+                    <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="name@company.com" required />
                   </div>
                 </div>
 
@@ -214,13 +187,7 @@ const DemoPageV3 = () => {
                   <label>Company <span className="optional-label">(optional)</span></label>
                   <div className="input-wrapper">
                     <Building2 className="input-icon" />
-                    <input
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      type="text"
-                      placeholder="Company name"
-                    />
+                    <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Company name" />
                   </div>
                 </div>
 
@@ -228,25 +195,14 @@ const DemoPageV3 = () => {
                   <label>Phone <span className="optional-label">(optional)</span></label>
                   <div className="input-wrapper">
                     <Phone className="input-icon" />
-                    <input
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      type="tel"
-                      placeholder="Phone number"
-                    />
+                    <input name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="Phone number" />
                   </div>
                 </div>
               </div>
 
               <div className="field-group" style={{ marginTop: '20px' }}>
                 <label>Notes <span className="optional-label">(optional)</span></label>
-                <textarea
-                  name="notes"
-                  value={formData.notes}
-                  onChange={handleChange}
-                  placeholder="Anything you want us to know."
-                ></textarea>
+                <textarea name="notes" value={formData.notes} onChange={handleChange} placeholder="Anything you want us to know." />
               </div>
 
               <p className="footer-text" style={{ marginTop: '12px' }}>
@@ -275,6 +231,7 @@ const DemoPageV3 = () => {
             </form>
           </div>
         </div>
+
       </div>
     </div>
   );
